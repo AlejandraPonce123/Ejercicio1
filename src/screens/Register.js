@@ -13,9 +13,10 @@ const Register = ({ navigation }) => {
     return emailPattern.test(email);
   };
 
+  
   const handleRegister = async () => {
-    if (!username.match(/^[A-Za-z]+$/)) {
-      Alert.alert('Error', 'El nombre de usuario debe contener solo letras');
+    if (!username.match(/^[A-Za-z]+ [A-Za-z]+$/)) {
+      Alert.alert('Error', 'El nombre de usuario debe contener un nombre y un apellido, separados por un espacio');
       return;
     }
     if (!validateEmail(email)) {

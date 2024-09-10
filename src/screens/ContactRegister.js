@@ -18,7 +18,7 @@ const ContactRegister = ({ navigation }) => {
     }
 
     if (!/^[A-Za-z]+$/.test(name) || !/^[A-Za-z]+$/.test(surname)) {
-      Alert.alert('Error', 'Nombre y apellido deben contener solo letras');
+      Alert.alert('Error', 'Debe contener únicamente un nombre y un apellido, compuestos exclusivamente por letras.');
       return;
     }
 
