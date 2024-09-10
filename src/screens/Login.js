@@ -55,7 +55,7 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#fff' },
-  title: { fontSize: 40, fontFamily: 'Cursive', color: '#3B82F6', textAlign: 'center', marginBottom: 40 },
+  title: { fontSize: 40, color: '#3B82F6', textAlign: 'center', marginBottom: 40 },
   input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 20, borderRadius: 5, fontSize: 16 },
   button: { backgroundColor: '#3B82F6', padding: 15, borderRadius: 5, alignItems: 'center' },
   buttonText: { color: '#fff', fontSize: 18 },
