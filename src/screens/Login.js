@@ -17,9 +17,9 @@ const Login = ({ navigation }) => {
 
       if (user) {
         Alert.alert('Login exitoso');
-        navigation.navigate('Home'); // Redirige a la pantalla principal
+        navigation.navigate('Home'); 
       } else {
-        Alert.alert('Error', 'Credenciales incorrectas o usuario no registrado');
+        Alert.alert('Error', 'Credenciales incorrectas');
       }
     } catch (error) {
       console.log(error);
@@ -54,12 +54,13 @@ const Login = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  title: { fontSize: 40, marginBottom: 40 },
-  input: { width: '80%', borderBottomWidth: 1, marginBottom: 20, padding: 10 },
-  button: { width: '80%', backgroundColor: '#3B82F6', padding: 15, alignItems: 'center' },
+  container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#fff' },
+  title: { fontSize: 40, fontFamily: 'Cursive', color: '#3B82F6', textAlign: 'center', marginBottom: 40 },
+  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 20, borderRadius: 5, fontSize: 16 },
+  button: { backgroundColor: '#3B82F6', padding: 15, borderRadius: 5, alignItems: 'center' },
   buttonText: { color: '#fff', fontSize: 18 },
-  registerText: { marginTop: 20, color: '#3B82F6' },
+  registerText: { textAlign: 'center', marginTop: 20, fontSize: 16, color: '#777' },
+  registerLink: { color: '#3B82F6', fontWeight: 'bold' },
 });
 
 export default Login;

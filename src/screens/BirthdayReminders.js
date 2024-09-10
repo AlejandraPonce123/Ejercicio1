@@ -6,7 +6,7 @@ import { useFocusEffect } from '@react-navigation/native'; // Importar useFocusE
 const BirthdayReminders = ({ navigation }) => {
   const [contacts, setContacts] = useState([]);
 
-  // useFocusEffect es como useEffect, pero se ejecuta cada vez que la pantalla gana el foco
+ 
   useFocusEffect(
     React.useCallback(() => {
       const fetchContacts = async () => {
@@ -15,30 +15,30 @@ const BirthdayReminders = ({ navigation }) => {
           if (storedContacts) {
             setContacts(JSON.parse(storedContacts));
           } else {
-            setContacts([]); // Asegurarse de que esté vacío si no hay contactos
+            setContacts([]); 
           }
         } catch (error) {
           console.log('Error al recuperar los contactos:', error);
         }
       };
       fetchContacts();
-    }, []) // No dependemos de variables, por lo que dejamos el array vacío
+    }, []) 
   );
 
   const getBirthdayStatus = (birthday) => {
     const today = new Date();
     const birthDate = new Date(birthday);
-
+  
     today.setHours(0, 0, 0, 0);
     birthDate.setHours(0, 0, 0, 0);
     birthDate.setFullYear(today.getFullYear());
-
-    if (birthDate.getTime() === today.getTime()) {
+  
+    if (birthDate.getDate() === today.getDate() && birthDate.getMonth() === today.getMonth()) {
       return 'Hoy Cumpleaños';
     } else if (birthDate < today) {
       return 'Pasado';
     } else {
-      const daysUntil = Math.ceil((birthDate - today) / (1000 * 60 * 60 * 24));
+      const daysUntil = Math.ceil((birthDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
       return `${daysUntil} días`;
     }
   };

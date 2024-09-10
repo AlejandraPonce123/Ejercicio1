@@ -36,7 +36,7 @@ const Register = ({ navigation }) => {
       await AsyncStorage.setItem('users', JSON.stringify(users));
 
       Alert.alert('Registro exitoso');
-      navigation.navigate('Login');  // Redirige al login después del registro
+      navigation.navigate('Login');  
     } catch (error) {
       console.log(error);
       Alert.alert('Error', 'Hubo un problema al registrarse');
@@ -81,10 +81,10 @@ const Register = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  title: { fontSize: 40, marginBottom: 40 },
-  input: { width: '80%', borderBottomWidth: 1, marginBottom: 20, padding: 10 },
-  button: { width: '80%', backgroundColor: '#3B82F6', padding: 15, alignItems: 'center' },
+  container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#fff' },
+  title: { fontSize: 40, fontFamily: 'Cursive', color: '#3B82F6', textAlign: 'center', marginBottom: 40 },
+  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 20, borderRadius: 5, fontSize: 16 },
+  button: { backgroundColor: '#3B82F6', padding: 15, borderRadius: 5, alignItems: 'center' },
   buttonText: { color: '#fff', fontSize: 18 },
 });
 
